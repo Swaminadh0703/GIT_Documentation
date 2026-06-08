@@ -19,9 +19,9 @@ Commits: It’s like a snapshot of the project within specified point of timelin
 Branch: A Git branch is a separate workspace used to make changes without affecting the main project.
 Common types:
 1.Main Branch --> The stable version of the project, usually production-ready.
-2.Feature Brance --> Used for developing the new features and for bug fixes.
+2.Feature Branch --> Used for developing the new features and for bug fixes.
 Merging: It is the process of integrating the changes from one branch to another. It allows you to combine the work done in two different branches and resolve any conflict issues that arise.
-Cloning: Creatin a local copy from remote repository in local machine.
+Cloning: Creating a local copy from remote repository in local machine.
 Pull: Fetching the updates from the remote repository and integrates them into your local repository.
 Push: Sends the local changes to the remote repository making it available to the others.
 
@@ -44,7 +44,7 @@ git config --global user.name "Name”  #set your identity for all the commits
 git config --global user.email "mail" #sets your email address
 git config --global color.ui true #enables helpful color highlighting in the terminal
 git config --list  #shows all the configured settings
-git init #initilizes new empty git repo in current folder
+git init #initialize new empty git repo in current folder
 git clone <url> #download the existing repos from the remote server 
 
 2.The Core Workflow Commands (Modify --> Stage --> Commit)
@@ -72,6 +72,19 @@ git branch -D <name> #Force delete. Deletes a branch even if it has unmerged cha
 git merge <branch> #merges specified branch into current branch
 git merge --abort #Stops the merge process if conflicts occur and you want to give up.
 git rebase <branch> #Reapplies commits on top of another base tip (linear history).
+
+4.Remote Syncing 
+
+git remote -v #Lists all remote repositories linked to your local account
+git remote add origin <url> #Connects local repo to a remote server
+git remote remove <name> #Removes the remote connection
+git fetch #Downloads the changes from the remote but does not update your code
+git pull #Downloads changes and immediately merges them (Fetch + Merge)
+git push -u origin <branch> #Uploads your commits to the remote branch
+git push --tags #Pushes specific version tags to the remote
+git push --force #Overwrites remote history with your local history
+
+
 
 
 
