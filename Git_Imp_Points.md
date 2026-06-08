@@ -46,6 +46,7 @@ git config --global color.ui true #enables helpful color highlighting in the ter
 git config --list  #shows all the configured settings
 git init #initialize new empty git repo in current folder
 git clone <url> #download the existing repos from the remote server 
+git clone -b <branch-name> <repository-url> #clones the specified branch into your local repository instead of the default branch
 
 2.The Core Workflow Commands (Modify --> Stage --> Commit)
 
@@ -83,6 +84,27 @@ git pull #Downloads changes and immediately merges them (Fetch + Merge)
 git push -u origin <branch> #Uploads your commits to the remote branch
 git push --tags #Pushes specific version tags to the remote
 git push --force #Overwrites remote history with your local history
+
+
+5.Inspection and Comparison
+
+git log #Shows the full commit history
+git log --oneline #Condensed history (one line per commit)
+git log --graph #Shows a text-based graph of branching history
+git diff #Shows differences between working directory and staging area
+git diff --staged #Shows differences between staging area and the last commit
+git blame <file> #Shows who modified each line of a file and when
+git show <commit-id> #Shows the specific changes (metadata + diff) of a commit
+
+6.Undo and fix
+
+git reset --soft HEAD~1 #Undoes the last commit but keeps changes in the Staging Area
+git reset HEAD~1 #Undoes the last commit and moves changes to the Working Dir
+git reset --hard HEAD~1 #Undoes the last commit and deletes all changes
+git restore <file> #Discards local changes to a specific file
+git revert <commit-id> #Creates a new commit that is the exact opposite of the specified commit
+
+
 
 
 
